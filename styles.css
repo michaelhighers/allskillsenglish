@@ -99,7 +99,7 @@ main {
 }
 
 .logo-container img {
-    width: 75%;
+    width: 80%;
     max-width: 350px; /* Adjust as needed */
     height: auto;
     display: block; /* Prevent extra space below image */
