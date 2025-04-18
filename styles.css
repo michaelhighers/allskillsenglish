@@ -92,7 +92,8 @@ main {
 }
 
 .logo-container {
-    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     width: 100%; /* Make sure logo container respects body's max-width */
     display: flex;
     justify-content: center; /* Center the logo within its container */
