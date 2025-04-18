@@ -116,7 +116,7 @@ main {
 }
 
 .subject-card {
-    background-color: rgba(85, 85, 85, 0.8); /* Slightly transparent gray background */
+    background-color: rgba(85, 85, 85, 0.75); /* Slightly transparent gray background */
     border-radius: 8px;
     padding: 1rem; /* Adjust padding */
     text-align: center;
@@ -126,7 +126,7 @@ main {
 }
 
 .subject-card:hover {
-    background-color: rgba(102, 102, 102, 0.9); /* Slightly less transparent on hover */
+    background-color: rgba(102, 102, 102, 0.8); /* Slightly less transparent on hover */
     transform: scale(1.02); /* Adjust hover scale */
 }
 
