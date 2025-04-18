@@ -84,6 +84,11 @@ main {
     align-items: center;
     padding: 2rem;
     flex-grow: 1; /* Allow main to grow and push footer to the bottom */
+    background-image: url('images/backgroundmain.jpg'); /* Add the background image */
+    background-size: cover; /* Cover the entire main section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    color: #fff; /* Ensure text remains readable on a dark background */
 }
 
 .logo-container {
@@ -110,7 +115,7 @@ main {
 }
 
 .subject-card {
-    background-color: #555; /* Gray card background */
+    background-color: rgba(85, 85, 85, 0.8); /* Slightly transparent gray background */
     border-radius: 8px;
     padding: 1rem; /* Adjust padding */
     text-align: center;
@@ -120,7 +125,7 @@ main {
 }
 
 .subject-card:hover {
-    background-color: #666;
+    background-color: rgba(102, 102, 102, 0.9); /* Slightly less transparent on hover */
     transform: scale(1.02); /* Adjust hover scale */
 }
 
@@ -248,6 +253,6 @@ footer {
         font-size: 1rem;
         padding: 1rem;
         aspect-ratio: 2 / 1;
-        width: 60%;
+        width: 70%;
     }
 }
