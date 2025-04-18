@@ -143,8 +143,8 @@ main {
     overflow-wrap: break-word; /* Prevent long words from causing overflow */
 }
 
-. subject-card img {
-    width: 50px;
+.subject-card img {
+    width: 50%;
     height: auto;
 }
 
