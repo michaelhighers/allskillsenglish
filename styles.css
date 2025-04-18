@@ -248,13 +248,11 @@ footer {
 @media (max-width: 480px) {
     .subject-cards-container {
         grid-template-columns: repeat(2, 1fr); /* 6 rows of 1 card */
-        justify-items: center;
     }
 
     .subject-card {
         font-size: 1rem;
         padding: 1rem;
         aspect-ratio: 2 / 0.8;
-        width: 40%;
     }
 }
