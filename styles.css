@@ -247,5 +247,7 @@ footer {
     .subject-card {
         font-size: 1rem;
         padding: 1rem;
+        aspect-ratio: 2 / 1;
+        width: 70%;
     }
 }
