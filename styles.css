@@ -143,6 +143,11 @@ main {
     overflow-wrap: break-word; /* Prevent long words from causing overflow */
 }
 
+. subject-card img {
+    width: 50%;
+    height: auto;
+}
+
 footer {
     text-align: center;
     padding: 1rem 0;
