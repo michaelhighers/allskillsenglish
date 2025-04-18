@@ -1,0 +1,251 @@
+/* Resetting default browser styles and applying box-sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: #f0f0f0; /* Off-white background */
+}
+
+body {
+    font-family: sans-serif; /* Choose a suitable font */
+    background-color: #333; /* Dark gray background */
+    color: #fff; /* Default text color */
+    line-height: 1.6;
+    max-width: 1200px; /* Common maximum width for website content */
+    margin: 0 auto; /* Center the body horizontally */
+    min-height: 100vh; /* Ensure body takes at least the full viewport height */
+    display: flex;
+    flex-direction: column; /* Make body a flex container for footer positioning */
+}
+
+header {
+    background-color: #444; /* Slightly lighter dark gray for the header */
+    padding: 0.5rem 1rem; /* Adjust header padding */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Default to space-between */
+    position: relative; /* Create containing block for absolute nav-links */
+}
+
+.main-nav {
+    display: flex;
+    width: 100%; /* Take full width for mobile positioning */
+    justify-content: flex-start; /* Default to left */
+}
+
+.hamburger-menu {
+    display: none; /* Hide by default on larger screens */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.bar {
+    height: 3px;
+    width: 100%;
+    background-color: #eee;
+    transition: 0.3s ease;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 1rem;
+}
+
+.nav-links li a {
+    color: #eee;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ccc;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    flex-grow: 1; /* Allow main to grow and push footer to the bottom */
+}
+
+.logo-container {
+    margin-bottom: 2rem;
+    width: 100%; /* Make sure logo container respects body's max-width */
+    display: flex;
+    justify-content: center; /* Center the logo within its container */
+}
+
+.logo-container img {
+    width: 75%;
+    max-width: 350px; /* Adjust as needed */
+    height: auto;
+    display: block; /* Prevent extra space below image */
+}
+
+.subject-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns on larger screens */
+    gap: 1rem; /* Reduce the gap slightly */
+    width: 95%; /* Allow the container to take up more of the body width */
+    max-width: 800px; /* Maximum width of the container */
+    margin-top: 2rem;
+}
+
+.subject-card {
+    background-color: #555; /* Gray card background */
+    border-radius: 8px;
+    padding: 1rem; /* Adjust padding */
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    aspect-ratio: 2 / 1.25; /* Set rectangular aspect ratio (width > height) */
+    min-width: 0; /* Allow cards to shrink below their content width if necessary */
+}
+
+.subject-card:hover {
+    background-color: #666;
+    transform: scale(1.02); /* Adjust hover scale */
+}
+
+.subject-card a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem; /* Adjust font size */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    overflow-wrap: break-word; /* Prevent long words from causing overflow */
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #444;
+    color: #eee;
+    width: 100%;
+}
+
+/* Media query for larger screens (min-width: 769px) */
+@media (min-width: 769px) {
+    header {
+        justify-content: center; /* Center content on larger screens */
+    }
+
+    .main-nav {
+        width: auto; /* Adjust width to fit content */
+        justify-content: center; /* Center nav links */
+    }
+
+    .hamburger-menu {
+        display: none; /* Hide hamburger on larger screens */
+    }
+
+    .nav-links {
+        display: flex !important; /* Force display for desktop */
+    }
+
+    .nav-links li {
+        margin: 0 1rem; /* Restore spacing between links */
+    }
+
+    .subject-cards-container {
+        grid-template-columns: repeat(3, 1fr); /* 2 rows of 3 cards */
+    }
+}
+
+/* Media query for smaller screens (max-width: 768px) */
+@media (max-width: 768px) {
+    header {
+        justify-content: space-between; /* Push elements to the edges */
+    }
+
+    .main-nav {
+        justify-content: flex-start; /* Align hamburger to the left */
+    }
+
+    .hamburger-menu {
+        display: flex; /* Show hamburger menu */
+    }
+
+    .nav-links {
+        display: none; /* Hide links by default on smaller screens */
+        flex-direction: column;
+        background-color: #444; /* Match header background */
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+        width: 200px; /* Set a specific width for the dropdown */
+        text-align: left; /* Align links to the left in the dropdown */
+        z-index: 10; /* Ensure it's above other content */
+    }
+
+    .nav-links.active {
+        display: flex !important; /* Show links when active class is applied */
+    }
+
+    .nav-links li {
+        margin: 0;
+        padding: 0; /* Remove padding from li */
+        border-bottom: 1px solid #555; /* Optional separator */
+        display: block; /* Make li a block-level element */
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links li a {
+        display: block; /* Make the link fill the entire li */
+        padding: 1rem; /* Add padding to the link itself */
+        color: #eee;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease; /* Add transition for hover */
+    }
+
+    .nav-links li a:hover {
+        background-color: #555; /* Similar hover color to subject cards */
+        color: #fff; /* Optional: change text color on hover */
+    }
+
+    .subject-cards-container {
+        grid-template-columns: repeat(2, 1fr); /* 3 rows of 2 cards */
+    }
+
+    .subject-card {
+        font-size: 0.9rem; /* Adjust font size for smaller cards */
+        padding: 0.75rem;
+    }
+}
+
+/* Media query for even smaller screens (e.g., phones) */
+@media (max-width: 480px) {
+    .subject-cards-container {
+        grid-template-columns: 1fr; /* 6 rows of 1 card */
+    }
+
+    .subject-card {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+}
