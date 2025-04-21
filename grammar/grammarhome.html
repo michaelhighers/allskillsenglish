@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar Home</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="grammar.css">
+</head>
+<body>
+    <div class="grammar-home">
+        <section class="introduction">
+            <h2>Welcome to Grammar!</h2>
+            <p>Here you'll find lessons and exercises to help you master English grammar. Choose a level below to get started.</p>
+        </section>
+
+        <section class="grammar-level">
+            <div class="level-intro">
+                <h2>Basic Grammar</h2>
+                <button class="toggle-lessons top" data-level="basic">Show Lessons</button>
+            </div>
+            <div class="lessons-container basic-lessons hide">
+                <div class="lesson-cards-wrapper">
+                    <div class="lesson-card">
+                        <a href="#">
+                            <h3>Nouns</h3>
+                            <p>Learn about different types of nouns and how to use them correctly.</p>
+                        </a>
+                    </div>
+                    <div class="lesson-card">
+                        <a href="#">
+                            <h3>Verbs</h3>
+                            <p>Explore action verbs, linking verbs, and auxiliary verbs.</p>
+                        </a>
+                    </div>
+                    </div>
+                <button class="toggle-lessons bottom" data-level="basic">Show Lessons</button>
+            </div>
+        </section>
+
+        <section class="grammar-level">
+            <div class="level-intro">
+                <h2>Intermediate Grammar</h2>
+                 <button class="toggle-lessons top" data-level="intermediate">Show Lessons</button>
+            </div>
+             <div class="lessons-container intermediate-lessons hide">
+                <div class="lesson-cards-wrapper">
+                    <div class="lesson-card">
+                        <a href="#">
+                            <h3>Tenses</h3>
+                            <p>Master the different English tenses: past, present, and future.</p>
+                        </a>
+                    </div>
+                    <div class="lesson-card">
+                        <a href="#">
+                            <h3>Clauses</h3>
+                            <p>Learn about independent and dependent clauses.</p>
+                        </a>
+                    </div>
+                    </div>
+                 <button class="toggle-lessons bottom" data-level="intermediate">Show Lessons</button>
+            </div>
+        </section>
+
+         <section class="grammar-level">
+            <div class="level-intro">
+                <h2>Advanced Grammar</h2>
+                 <button class="toggle-lessons top" data-level="advanced">Show Lessons</button>
+            </div>
+            <div class="lessons-container advanced-lessons hide">
+                <div class="lesson-cards-wrapper">
+                     <div class="lesson-card">
+                        <a href="#">
+                            <h3>Conditionals</h3>
+                            <p>Explore different types of conditional sentences.</p>
+                        </a>
+                    </div>
+                    <div class="lesson-card">
+                        <a href="#">
+                            <h3>Subjunctive Mood</h3>
+                            <p>Learn about the subjunctive mood and its uses.</p>
+                        </a>
+                    </div>
+                    </div>
+                <button class="toggle-lessons bottom" data-level="advanced">Show Lessons</button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButtons = document.querySelectorAll('.toggle-lessons');
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const level = this.dataset.level;
+                    const lessonsContainer = document.querySelector(`.lessons-container.${level}-lessons`);
+                    if (lessonsContainer) {
+                        lessonsContainer.classList.toggle('show');
+                        const isShowing = lessonsContainer.classList.contains('show');
+                        const buttons = document.querySelectorAll(`.toggle-lessons[data-level="${level}"]`);
+                        buttons.forEach(btn => {
+                            btn.textContent = isShowing ? `Hide Lessons` : `Show Lessons`; // Modified line
+                        });
+                    }
+                });
+            });
+
+            // Initially hide all lesson containers
+            const allLessonsContainers = document.querySelectorAll('.lessons-container');
+            allLessonsContainers.forEach(container => {
+                container.classList.add('hide');
+            });
+        });
+    </script>
+</body>
+</html>
 
