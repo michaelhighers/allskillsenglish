@@ -1,6 +1,6 @@
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 const navLinks = document.querySelector('.nav-links');
-const mainContent = document.querySelector('main'); // Get the main content element
+const mainContent = document.querySelector('main.grammar-home'); // Updated selector
 
 if (hamburgerMenu && navLinks && mainContent) {
     hamburgerMenu.addEventListener('click', () => {
