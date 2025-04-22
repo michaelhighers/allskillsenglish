@@ -151,22 +151,24 @@ main {
 .lesson-cards-wrapper {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
-    width: 500px;
+    width: 650px;
     margin: 0 auto 0.5rem;
 }
 
 .lesson-cards-wrapper .lesson-card {
-    min-height: 120px; /* Restore min-height for consistent card size */
-    background-color: rgba(85, 85, 85, 0.8); /* Slightly transparent gray background */
+    width: 80%;
+    aspect-ratio: 2 / 0.5;
+    background-color: rgba(85, 85, 85, 0.8);
     border-radius: 8px;
     padding: 1.5rem;
-    text-align: center; /* Restore center alignment */
+    text-align: center;
     transition: background-color 0.3s ease, transform 0.2s ease-in-out;
-    display: flex; /* Use flex to center content within the card */
-    flex-direction: column; /* Stack heading and paragraph vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .lesson-cards-wrapper .lesson-card a {
@@ -352,24 +354,24 @@ footer {
     }
 
     .nav-links li a {
-        display: block; /* Make the link fill the entire li */
-        padding: 1rem; /* Add padding to the link itself */
+        display: block;
+        padding: 1rem;
         color: #eee;
         text-decoration: none;
         font-weight: bold;
-        transition: background-color 0.3s ease; /* Add transition for hover */
+        transition: background-color 0.3s ease;
     }
 
     .nav-links li a:hover {
-        background-color: #555; /* Similar hover color to subject cards */
-        color: #fff; /* Optional: change text color on hover */
+        background-color: #555;
+        color: #fff;
     }
 
     .subject-cards-container,
-    .lessons-container { /* Apply single-column grid to the wrapper now */
-        width: 80%;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
+    .lessons-container {
+        width: 90%; /* Adjust if needed to control the width of the container holding the wrapper */
+        margin-left: auto;
+        margin-right: auto; /* Center the lessons container */
     }
 
     .subject-card {
@@ -379,13 +381,31 @@ footer {
     }
 
     .lesson-cards-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: 1rem;
-        width: 80%;
-        max-width: 400px;
+        width: 100%; /* Make the wrapper take the full width of its container */
+        margin: 0 auto 0.5rem; /* Maintain horizontal centering */
+    }
+
+    .lesson-cards-wrapper .lesson-card {
+        width: 95%; /* Maintain the relative width */
+        aspect-ratio: 2 / 0.75; /* Maintain the aspect ratio */
+        /* Keep other styles consistent */
+        background-color: rgba(85, 85, 85, 0.8);
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .lesson-card h3 {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .lesson-card p {
@@ -395,33 +415,50 @@ footer {
 
 /* Media query for even smaller screens (max-width: 480px) */
 @media (max-width: 480px) {
-    .subject-cards-container,
-    .lessons-container { /* Apply single-column grid to the wrapper now */
+    .subject-cards-container {
         width: 85%;
-        grid-template-columns: 1fr; /* Single column on very small screens */
     }
 
     .subject-card {
         padding: 1.2rem;
         font-size: 1rem;
-        aspect-ratio: 2 / 1;
-        width: 70%;
+        aspect-ratio: 2 / 0.75;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .lessons-container {
+        width: 95%; /* Adjust further for very small screens if needed */
         margin-left: auto;
         margin-right: auto;
     }
 
     .lesson-cards-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: 1rem;
-        width: 80%;
-        max-width: 400px;
+        width: 100%; /* Take full width */
+        margin: 0 auto 0.5rem;
     }
 
-    .lesson-card {
-        padding: 1.2rem;
+    .lesson-cards-wrapper .lesson-card {
+        width: 95%; /* Adjust the relative width slightly if needed */
+        aspect-ratio: 2 / 0.75; /* Maintain aspect ratio */
+        /* Keep other styles consistent */
+        background-color: rgba(85, 85, 85, 0.8);
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .lesson-card h3 {
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 
     .lesson-card p {
