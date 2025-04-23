@@ -95,40 +95,42 @@ main {
 
 .logo-container {
     margin-bottom: 2rem;
-    width: 100%; /* Make sure logo container respects body's max-width */
-    display: flex;
-    justify-content: center; /* Center the logo within its container */
+    width: 100%;
 }
 
 .logo-container img {
     width: 75%;
-    max-width: 350px; /* Adjust as needed */
+    max-width: 350px;
     height: auto;
-    display: block; /* Prevent extra space below image */
+    display: block;
+    margin: 0 auto; /* Center the block-level image horizontally */
 }
 
 .subject-cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reduced min-width */
     gap: 1.5rem;
     width: 90%;
-    max-width: 960px;
+    max-width: 768px; /* Reduced max-width of the container */
     margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
 }
 
 .subject-card {
-    background-color: rgba(85, 85, 85, 0.8); /* Slightly transparent gray background */
+    background-color: rgba(85, 85, 85, 0.8);
     border-radius: 8px;
-    padding: 1.5rem; /* Adjust padding */
+    padding: 1rem; /* Adjust padding */
     text-align: center;
     transition: background-color 0.3s ease, transform 0.2s ease-in-out;
-    aspect-ratio: 2 / 1.25; /* Set rectangular aspect ratio (width > height) */
-    min-width: 0; /* Allow cards to shrink below their content width if necessary */
-    display: flex; /* Add flexbox layout */
-    flex-direction: column; /* Stack content vertically */
-    justify-content: center; /* Center content vertically */
+    min-width: 0;
+    display: flex;
+    flex-direction: column; /* Stack image and text */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    aspect-ratio: 1 / 1; /* Make them square or adjust as needed */
+    position: relative; /* Create a positioning context for the image */
+    overflow: hidden; /* Clip any overflowing content */
 }
 
 .subject-card:hover {
@@ -139,13 +141,28 @@ main {
 .subject-card a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.2rem; /* Adjust font size */
+    display: flex;
+    flex-direction: column; /* Stack image and heading within the link */
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.subject-card a img {
+    width: 50%; /* Further adjust image size */
+    height: auto;
+    max-height: 50%; /* Further adjust max image height */
+    margin-bottom: 0.5rem;
+    display: block;
+    object-fit: contain; /* Preserve aspect ratio and fit within the bounds */
+}
+
+.subject-card a h3 {
+    font-size: 1rem; /* Slightly smaller font size */
     font-weight: bold;
-    display: flex; /* Make the anchor a flex container as well */
-    align-items: center; /* Center content vertically within the anchor */
-    justify-content: center; /* Center content horizontally within the anchor */
-    height: 100%; /* Make the anchor take the full height of the card */
-    width: 100%; /* Make the anchor take the full width of the card */
+    color: #fff;
+    margin-top: 0.5rem; /* Add some space between image and text */
 }
 
 .lesson-cards-wrapper {
@@ -325,7 +342,7 @@ footer {
     }
 
     .subject-cards-container {
-        grid-template-columns: repeat(3, 1fr); /* 2 rows of 3 cards */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -388,12 +405,40 @@ footer {
         width: 90%;
         margin-left: auto;
         margin-right: auto;
+        grid-template-columns: 1fr; /* Force single column */
     }
 
     .subject-card {
-        aspect-ratio: 2 / 0.75;
+        display: flex;
+        flex-direction: row; /* Arrange image and text horizontally */
+        align-items: center;
         padding: 1rem;
-        min-height: 120px;
+        aspect-ratio: auto; /* Remove fixed aspect ratio */
+    }
+
+    .subject-card a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    }
+
+    .subject-card a img {
+        width: 80px; /* Adjust image width for smaller screens */
+        height: auto;
+        max-height: 80px;
+        margin-right: 1rem;
+        display: block;
+        object-fit: contain;
+    }
+
+    .subject-card a h3 {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #fff;
+        text-align: left;
+        flex-grow: 1;
     }
 
     .lessons-container {
@@ -413,7 +458,7 @@ footer {
 
     .lesson-cards-wrapper .lesson-card {
         width: 95%; /* Make the card take up more of the smaller screen width */
-        height: auto; /* Allow the height to adjust based on content, but we'll control it indirectly */
+        height: auto; /* Allow the height to adjust based on content */
         background-color: rgba(85, 85, 85, 0.8);
         border-radius: 8px;
         transition: background-color 0.3s ease, transform 0.2s ease-in-out;
@@ -470,11 +515,17 @@ footer {
     }
 
     .subject-card {
-        padding: 1.2rem;
-        font-size: 1rem;
-        aspect-ratio: 2 / 0.75;
-        margin-left: auto;
-        margin-right: auto;
+        padding: 1rem;
+    }
+
+    .subject-card a img {
+        width: 60px;
+        max-height: 60px;
+        margin-right: 0.5rem;
+    }
+
+    .subject-card a h3 {
+        font-size: 1.2rem;
     }
 
     .lessons-container {
