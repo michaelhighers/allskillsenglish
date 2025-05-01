@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const answerButtons = questions[index].querySelectorAll('.answer');
         answerButtons.forEach(button => {
             button.addEventListener('click', function () {
-                checkAnswer(button, index);
+                checkAnswer(this, index); // 'this' refers to the clicked button
             });
         });
 
@@ -52,21 +52,23 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to check if the selected answer is correct
     function checkAnswer(button, questionIndex) {
         const correctAnswerIndex = questions[questionIndex].dataset.correct;
-        const selectedAnswer = button.dataset.index;
+        const selectedAnswerIndex = button.dataset.index;
 
         // Disable all answer buttons after selecting an answer
         const answerButtons = questions[questionIndex].querySelectorAll('.answer');
         answerButtons.forEach(btn => btn.disabled = true);
 
         // Check if the answer is correct
-        if (selectedAnswer === correctAnswerIndex) {
+        if (selectedAnswerIndex === correctAnswerIndex) {
             button.classList.add('correct');
             score++; // Increase score for correct answer
         } else {
             button.classList.add('incorrect');
             // Highlight the correct answer
             const correctButton = questions[questionIndex].querySelector(`[data-index="${correctAnswerIndex}"]`);
-            correctButton.classList.add('correct');
+            if (correctButton) {
+                correctButton.classList.add('correct');
+            }
         }
 
         // Show the next button after selecting an answer
