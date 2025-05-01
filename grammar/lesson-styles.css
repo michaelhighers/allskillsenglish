@@ -334,10 +334,7 @@
         font-weight: bold;
         background-color: rgba(105, 105, 105, 0.7);
     }
-    /* The .answer:hover within this block remains */
-    .answer:hover {
-        background-color: rgba(125, 125, 125, 0.7);
-    }
+    /* The .answer:hover is REMOVED from here */
 
     #score-container {
         width: 90%; /* Adjust width for smaller screens */
