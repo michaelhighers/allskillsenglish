@@ -58,22 +58,21 @@ document.addEventListener('DOMContentLoaded', function () {
         const answerButtons = questions[questionIndex].querySelectorAll('.answer');
         answerButtons.forEach(btn => btn.disabled = true);
 
-        // Check if the answer is correct and apply feedback with a small delay
-        setTimeout(() => {
-            if (selectedAnswerIndex === correctAnswerIndex) {
-                button.classList.add('correct');
-                score++; // Increase score for correct answer
-            } else {
-                button.classList.add('incorrect');
-                // Highlight the correct answer
-                const correctButton = questions[questionIndex].querySelector(`[data-index="${correctAnswerIndex}"]`);
-                if (correctButton) {
-                    correctButton.classList.add('correct');
-                }
+        // Check if the answer is correct
+        if (selectedAnswerIndex === correctAnswerIndex) {
+            button.classList.add('correct');
+            score++; // Increase score for correct answer
+        } else {
+            button.classList.add('incorrect');
+            // Highlight the correct answer
+            const correctButton = questions[questionIndex].querySelector(`[data-index="${correctAnswerIndex}"]`);
+            if (correctButton) {
+                correctButton.classList.add('correct');
             }
-            // Show the next button after the delay
-            nextButton.style.display = 'block';
-        }, 100); // Adjust the delay (in milliseconds) as needed
+        }
+
+        // Show the next button after selecting an answer
+        nextButton.style.display = 'block';
 
         // If it's the last question, show the score button instead of the next button
         if (currentQuestion === questions.length - 1) {
