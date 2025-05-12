@@ -9,6 +9,7 @@
 
 html {
     background-color: #f0f0f0;
+    font-size: 16px; /* Optional: Explicitly set the base font size */
 }
 
 body {
@@ -159,7 +160,7 @@ main {
 }
 
 .subject-card a h3 {
-    font-size: 1rem; /* Slightly smaller font size */
+    font-size: 1.2rem; /* Recommended larger font size using rem */
     font-weight: bold;
     color: #fff;
     margin-top: 0.5rem; /* Add some space between image and text */
@@ -405,40 +406,41 @@ footer {
         width: 90%;
         margin-left: auto;
         margin-right: auto;
-        grid-template-columns: 1fr; /* Force single column */
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .subject-card {
         display: flex;
-        flex-direction: row; /* Arrange image and text horizontally */
-        align-items: center;
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center items horizontally */
         padding: 1rem;
-        aspect-ratio: auto; /* Remove fixed aspect ratio */
+        aspect-ratio: 1 / 1; /* Make them square */
     }
 
     .subject-card a {
         display: flex;
-        flex-direction: row;
+        flex-direction: column; /* Stack image and heading within the link */
         align-items: center;
+        justify-content: center; /* Center content vertically within the square */
+        height: 100%;
         width: 100%;
-        height: auto;
     }
 
     .subject-card a img {
-        width: 80px; /* Adjust image width for smaller screens */
+        width: 60%; /* Adjust image size within the square */
         height: auto;
-        max-height: 80px;
-        margin-right: 1rem;
+        max-height: 60%; /* Ensure image doesn't take up too much vertical space */
+        margin-bottom: 0.5rem; /* Space between image and text */
         display: block;
-        object-fit: contain;
+        object-fit: contain; /* Preserve aspect ratio */
     }
 
     .subject-card a h3 {
-        font-size: 1.4rem;
+        font-size: 1.1rem; /* Smaller heading size for better fit */
         font-weight: bold;
         color: #fff;
-        text-align: left;
-        flex-grow: 1;
+        text-align: center; /* Center the text below the image */
+        margin-top: 0.5rem; /* Space between image and text */
     }
 
     .lessons-container {
@@ -511,21 +513,44 @@ footer {
 /* Media query for even smaller screens (max-width: 480px) */
 @media (max-width: 480px) {
     .subject-cards-container {
-        width: 85%;
+        width: 95%; /* Use more of the screen width */
+        grid-template-columns: repeat(2, 1fr); /* Display in two columns */
+        gap: 0.75rem; /* Adjust gap for smaller screens */
     }
 
     .subject-card {
-        padding: 1rem;
+        display: flex;
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center items horizontally */
+        padding: 0.75rem; /* Slightly reduce padding */
+        aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+    }
+
+    .subject-card a {
+        display: flex;
+        flex-direction: column; /* Stack image and heading within the link */
+        align-items: center;
+        justify-content: center; /* Center content vertically */
+        height: 100%;
+        width: 100%;
     }
 
     .subject-card a img {
-        width: 60px;
-        max-height: 60px;
-        margin-right: 0.5rem;
+        width: 50%; /* Adjust image size for smaller columns */
+        height: auto;
+        max-height: 50%; /* Maintain max height */
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 0.3rem; /* Reduce bottom margin slightly */
+        display: block;
+        object-fit: contain; /* Preserve aspect ratio */
     }
 
     .subject-card a h3 {
-        font-size: 1.2rem;
+        font-size: 0.9rem; /* Adjust font size for smaller cards */
+        font-weight: bold;
+        color: #fff;
+        text-align: center; /* Center the text below the image */
+        margin-top: 0.3rem; /* Reduce top margin slightly */
     }
 
     .lessons-container {
@@ -537,24 +562,24 @@ footer {
     }
 
     .lesson-cards-wrapper .lesson-card {
-        width: 100%; /* Take up almost the full width on very small screens */
+        width: 100%; /* Take up full width in single column layout */
         height: auto; /* Adjust height automatically */
     }
 
     .lesson-cards-wrapper .lesson-card a img {
-        width: 60px; /* Even smaller image */
+        width: 60px; /* Maintain image size */
     }
 
     .lesson-cards-wrapper .lesson-card .lesson-text {
-        padding: 0.5rem; /* Even less padding */
+        padding: 0.5rem; /* Maintain padding */
     }
 
     .lesson-cards-wrapper .lesson-card .lesson-text h3 {
-        font-size: 0.9rem; /* Even smaller heading */
+        font-size: 0.9rem; /* Maintain heading size */
     }
 
     .lesson-cards-wrapper .lesson-card .lesson-text p {
-        font-size: 0.75rem; /* Even smaller paragraph */
+        font-size: 0.75rem; /* Maintain paragraph size */
         line-height: 1.2;
     }
 }
