@@ -26,6 +26,27 @@
     text-align: center;
 }
 
+/* Color-based classes for highlighting */
+.green {
+    color: #a7c957;
+}
+
+.blue {
+    color: #6495ED;
+}
+
+.khaki {
+    color: #f0e68c;
+}
+
+.underline {
+    text-decoration: underline; /* We might not need this anymore, but keeping it for potential future use */
+}
+
+.bold {
+    font-weight: bold;
+}
+
 /* Styles for the Introduction section */
 #introduction p {
     line-height: 1.8;
@@ -52,10 +73,6 @@
 
 .examples li {
     margin-bottom: 0.5rem;
-}
-
-.examples li strong {
-    color: #a7c957; /* Example highlight color for the grammar point */
 }
 
 /* Styles for the Interactive Quiz section */
@@ -232,15 +249,12 @@
     margin-top: 1rem;
 }
 
-#try-again:hover {
-    background-color: #777;
-}
-
 /* Styles for the Downloadable Worksheets section */
 .worksheet-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid layout */
     gap: 1rem;
+    margin-top: 1rem; /* Add some top margin for spacing */
 }
 
 .worksheet-item {
@@ -257,7 +271,7 @@
 }
 
 .worksheet-item img {
-    max-width: 100%;
+    max-width: 100%; /* Ensure image doesn't exceed container */
     height: auto;
     border-radius: 3px;
     margin-bottom: 0.5rem;
@@ -319,7 +333,8 @@
     }
 
     .answer-container {
-        grid-template-columns: 1fr; /* Stack answers on smaller screens */
+        display: flex;
+        flex-direction: column; /* Stack answers on smaller screens */
         gap: 0.75rem; /* Adjust gap for mobile */
         margin-top: 1rem;
         margin-bottom: 1rem;
@@ -342,6 +357,7 @@
     }
 
     #score-result {
+        color: #a7c957;
         font-size: 1.25rem;
     }
 
