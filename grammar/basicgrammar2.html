@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Grammar Lesson 3: Yes/No Questions</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="lesson-styles.css">
+    <style>
+        .question-word {
+            color: #6495ED; /* Cornflower Blue for Question Words */
+            font-weight: bold;
+        }
+        .subject {
+            font-weight: bold;
+            color: #a7c957; /* Green for Subject */
+        }
+        .verb {
+            text-decoration: underline; /* Consistent verb styling */
+        }
+        .complement {
+            font-style: italic; /* Consistent complement styling */
+            color: #f0e68c; /* Khaki - a desaturated yellow */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <button class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="grammarhome.html">Grammar</a></li>
+                <li><a href="../speaking/speakinghome.html">Speaking</a></li>
+                <li><a href="../listening/listeninghome.html">Listening</a></li>
+                <li><a href="../reading/readinghome.html">Reading</a></li>
+                <li><a href="../writing/writinghome.html">Writing</a></li>
+                <li><a href="../idioms/idiomshome.html">Idioms</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lesson-page">
+
+        <div class="logo-container">
+            <a href="../index.html">
+                <img src="../images/logowhite.svg" alt="Your Website Logo">
+            </a>
+        </div>
+
+        <section id="introduction" class="lesson-section">
+            <h2>Basic English Sentence Structure: Yes/No Questions</h2>
+            <p>In English, we form simple yes/no <span style="font-weight: bold;">questions</span> by often changing the order of the subject and the first verb (usually a form of 'to be' or an auxiliary verb like 'do' or 'does'). This lesson will focus on these basic question structures.</p>
+        </section>
+
+        <section id="models-and-examples" class="lesson-section">
+            <h2>Forming Yes/No Questions</h2>
+            <div class="grammar-model">
+                <h3>Using 'to be'</h3>
+                <p><span style="font-weight: bold;">Statement:</span> <span class="subject">Subject</span> + am/is/are + (<span class="complement">complement</span>).</p>
+                <p><span style="font-weight: bold;">Question:</span> <span class="question-word">Am/Is/Are</span> + <span class="subject">Subject</span> + (<span class="complement">complement</span>)?</p>
+            </div>
+            <div class="examples">
+                <h3>Examples with 'to be':</h3>
+                <ul>
+                    <li>Statement: <span class="subject">You</span> are <span class="complement">happy</span>. → Question: <span class="question-word">Are</span> <span class="subject">you</span> <span class="complement">happy</span>?</li>
+                    <li>Statement: <span class="subject">He</span> is <span class="complement">a teacher</span>. → Question: <span class="question-word">Is</span> <span class="subject">he</span> <span class="complement">a teacher</span>?</li>
+                    <li>Statement: <span class="subject">They</span> are <span class="complement">tired</span>. → Question: <span class="question-word">Are</span> <span class="subject">they</span> <span class="complement">tired</span>?</li>
+                </ul>
+            </div>
+
+            <div class="grammar-model">
+                <h3>Using 'do/does'</h3>
+                <p><span style="font-weight: bold;">Statement:</span> <span class="subject">Subject</span> + (<span class="verb">other verb</span>).</p>
+                <p><span style="font-weight: bold;">Question:</span> <span class="question-word">Do/Does</span> + <span class="subject">Subject</span> + (<span class="verb">base form of verb</span>)?</p>
+            </div>
+            <div class="examples">
+                <h3>Examples with 'do/does':</h3>
+                <ul>
+                    <li>Statement: <span class="subject">She</span> <span class="verb">likes</span> <span class="complement">coffee</span>. → Question: <span class="question-word">Does</span> <span class="subject">she</span> <span class="verb">like</span> <span class="complement">coffee</span>?</li>
+                    <li>Statement: <span class="subject">They</span> <span class="verb">play</span> <span class="complement">games</span>. → Question: <span class="question-word">Do</span> <span class="subject">they</span> <span class="verb">play</span> <span class="complement">games</span>?</li>
+                    <li>Statement: <span class="subject">He</span> <span class="verb">speaks</span> <span class="complement">Spanish</span>. → Question: <span class="question-word">Does</span> <span class="subject">he</span> <span class="verb">speak</span> <span class="complement">Spanish</span>?</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="interactive-quiz" class="lesson-section">
+            <h2>Interactive Quiz: Yes/No Questions</h2>
+            <div class="quiz-container">
+                <div id="quiz-content">
+
+                    <h2 class="quiz-title">Choose the Correct Question Word</h2>
+                    <img src="../images/questionmark6.png" alt="Question Mark" class="card-image quiz-start-image">
+
+                    <div class="button-container">
+                        <button id="start">Start</button>
+                    </div>
+
+                    <div class="question-container">
+                        <div class="question" data-correct="1" style="display:none;">
+                            <p>____ you ready?</p>
+                            <div class="answer-container">
+                                <button class="answer" data-index="1">Are</button>
+                                <button class="answer" data-index="2">Is</button>
+                                <button class="answer" data-index="3">Do</button>
+                                <button class="answer" data-index="4">Does</button>
+                            </div>
+                            <p class="instruction">Choose the correct question word.</p>
+                        </div>
+
+                        <div class="question" data-correct="4" style="display:none;">
+                            <p>____ he like it?</p>
+                            <div class="answer-container">
+                                <button class="answer" data-index="1">Am</button>
+                                <button class="answer" data-index="2">Are</button>
+                                <button class="answer" data-index="3">Do</button>
+                                <button class="answer" data-index="4">Does</button>
+                            </div>
+                            <p class="instruction">Choose the correct question word.</p>
+                        </div>
+
+                        <div class="question" data-correct="2" style="display:none;">
+                            <p>____ she a doctor?</p>
+                            <div class="answer-container">
+                                <button class="answer" data-index="1">Am</button>
+                                <button class="answer" data-index="2">Is</button>
+                                <button class="answer" data-index="3">Do</button>
+                                <button class="answer" data-index="4">Does</button>
+                            </div>
+                            <p class="instruction">Choose the correct question word.</p>
+                        </div>
+
+                        <div class="question" data-correct="3" style="display:none;">
+                            <p>____ they understand?</p>
+                            <div class="answer-container">
+                                <button class="answer" data-index="1">Am</button>
+                                <button class="answer" data-index="2">Is</button>
+                                <button class="answer" data-index="3">Do</button>
+                                <button class="answer" data-index="4">Does</button>
+                            </div>
+                            <p class="instruction">Choose the correct question word.</p>
+                        </div>
+
+                        <div class="question" data-correct="1" style="display:none;">
+                            <p>____ I late?</p>
+                            <div class="answer-container">
+                                <button class="answer" data-index="1">Am</button>
+                                <button class="answer" data-index="2">Are</button>
+                                <button class="answer" data-index="3">Do</button>
+                                <button class="answer" data-index="4">Does</button>
+                            </div>
+                            <p class="instruction">Choose the correct question word.</p>
+                        </div>
+                    </div>
+
+                    <div class="button-wrapper">
+                        <button id="next" style="display:none;">Next</button>
+                        <button id="score" style="display:none;">Score</button>
+                    </div>
+
+                    <div id="score-container" style="display:none;">
+                        <h2 id="score-result"></h2>
+                        <button id="try-again" style="display: none;">Try Again</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="downloadable-worksheets" class="lesson-section">
+            <h2>Downloadable Worksheets</h2>
+            <div class="worksheet-list">
+                <div class="worksheet-item">
+                    <a href="../worksheets/sample1.pdf" target="_blank">
+                        <img src="../worksheets/thumbnails/sample1.jpg" alt="Worksheet">
+                        <p>Basic Grammar 1 - Worksheet 1 (PDF)</p>
+                    </a>
+                </div>
+                <div class="worksheet-item">
+                    <a href="../worksheets/basic-grammar-1-worksheet-2.pdf" target="_blank">
+                        <img src="../worksheets/thumbnails/basic-grammar-1-worksheet-2-thumb.jpg" alt="Worksheet 2 Thumbnail">
+                        <p>Basic Grammar 1 - Worksheet 2 (PDF)</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Your English Learning Website</p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="quiz-script.js"></script>
+</body>
+</html>
